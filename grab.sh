@@ -55,7 +55,7 @@ check_and_download()
 }
 
 echo "grab images links"
-curl -# "http://www.reddit.com/r/f1porn/.rss" | xmllint --format - > "$RSS";
+curl -# "$RSS_LINK" | xmllint --format - > "$RSS";
 grep -P "href" "$RSS" | sed -re 's/\ /\n/g' | grep -P "href.*\.jpg" | sed -r -e "s/href\=\"//" -e "s/\.jpg\".*$/\.jpg/" > "$DLIST";
 cat "$DLIST" | while read line;
                do
