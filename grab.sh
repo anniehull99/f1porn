@@ -28,7 +28,9 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-DST_DIR="images/"
+if [ -z "$DST_DIR" ]; then
+    DST_DIR="images/"
+fi;
 
 RSS_LINK="http://www.reddit.com/r/f1porn/.rss"
 RSS="/tmp/f1porn.xml"
