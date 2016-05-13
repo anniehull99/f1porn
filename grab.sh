@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (c) 2014, Ilya Arefiev
+# Copyright (c) 2016, Ilya Arefiev
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -57,7 +57,7 @@ check_and_download()
 }
 
 echo "grab images links"
-curl -# "$RSS_LINK" | xmllint --format - > "$RSS";
+curl -A "Mozilla/5.0" -# "$RSS_LINK" | xmllint --format - > "$RSS";
 grep -P "href" "$RSS" | sed -re 's/\ /\n/g' | grep -P "href.*\.jpg" | sed -r -e "s/href\=\"//" -e "s/\.jpg\".*$/\.jpg/" > "$DLIST";
 cat "$DLIST" | while read line;
                do
