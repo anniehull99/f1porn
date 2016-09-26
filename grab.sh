@@ -32,7 +32,7 @@ if [ -z "$DST_DIR" ]; then
     DST_DIR="images/"
 fi;
 
-RSS_LINK="http://www.reddit.com/r/f1porn/.rss"
+RSS_LINK="https://www.reddit.com/r/f1porn/.rss"
 RSS="/tmp/f1porn.xml"
 DLIST="/tmp/f1porn.links"
 TODAY=$(date +%F);
